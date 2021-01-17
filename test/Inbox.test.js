@@ -16,6 +16,7 @@ beforeEach(async () => {
 
 describe('Inbox', () => {
   it('deploys a contract', () => {
-    console.log(inbox);
+    // check for existence of what is passed in
+    assert.ok(inbox.options.address);
   });
 });
