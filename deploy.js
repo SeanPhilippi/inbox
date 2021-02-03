@@ -23,7 +23,7 @@ const deploy = async () => {
     .deploy({ data: '0x' + bytecode })
     .send({ from: accounts[0] });
 
-    console.log('Contract deployed to', result.options.address)
+    console.log('Contract deployed to', result.options.address);
 }
 
 deploy();

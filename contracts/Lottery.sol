@@ -6,6 +6,8 @@ contract Lottery {
     address public manager;
     // dynamic array of addresses
     address[] public players;
+    // get this to work later
+    // address public lastWinner;
 
     function Lottery() public {
         manager = msg.sender;
@@ -29,6 +31,8 @@ contract Lottery {
         require(msg.sender == manager);
         uint index = random() % players.length;
         players[index].transfer(this.balance);
+        // get this to work later
+        // lastWinner = players[index];
         // create new players dynamic array with initial length of 0
         players = new address[](0);
     }
@@ -40,6 +44,5 @@ contract Lottery {
 
     function getPlayers() public view returns (address[]) {
         return players;
-
     }
 }
